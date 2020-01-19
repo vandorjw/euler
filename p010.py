@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
-# By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13,
-# we can see that the 6th prime is 13.
-# What is the 10 001st prime number?
+"""
+The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
+
+Find the sum of all the primes below two million.
+"""
 
 
 def factors(x):
@@ -32,17 +34,19 @@ def is_prime(x):
         return True
 
 
-def nth_prime(n):
-    count = 0
+def primes_lt_limit(limit):
     num = 1
-    while count < n:
+    primes = []
+    while num < limit:
         num += 2
         if is_prime(num):
-            count += 1
-    return num
+            primes.append(num)
+            print(num)
+    return primes
 
 
 if __name__ == "__main__":
-    limit = 10001
-    num = nth_prime(limit)
-    print(f"{num} is the {limit}th prime")
+    print('Euler Problem 10')
+    primes = primes_lt_limit(2000000)
+    result = sum(primes)
+    print(result)
