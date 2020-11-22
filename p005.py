@@ -1,26 +1,17 @@
 # -*- coding: utf-8 -*-
+from eulerlibs.factors import multi_least_common_multiple, range1
 
 # 2520 is the smallest number that can be divided by each of the numbers
 # from 1 to 10 without any remainder.
 # What is the smallest positive number that is evenly divisible
 # by all of the numbers from 1 to 20?
 
-def is_x_divisible_by_n(x, n):
-    if x % n == 0:
-        return True
-    else:
-        return False
+"""
+What this question is asking for, is the least common multiple of all numbers between 1 and 20
+"""
 
+list_1_to_20 = [x for x in range1(20)]
 
-# 1,,3,4,
+lcm = multi_least_common_multiple(list_1_to_20)
 
-# multiple of 20
-# multiple of 17
-
-# 1. get the primes between 1 and 20
-# 2. starting at 20, check
-# if false: multiply by next greatest? prime and check..
-
-
-if __name__ == "__main__":
-    print('todo')
+print(lcm)  # this is the answer
